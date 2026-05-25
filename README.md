@@ -129,4 +129,136 @@ The project calculates several e-commerce performance metrics, including:
 
 ---
 
+## Power BI Dashboard
+
+The Power BI dashboard was created using selected SQL views prepared in MySQL.  
+Most calculations were performed directly in SQL, while Power BI was used mainly for visualization and interactive exploration.
+
+The dashboard consists of four pages:
+
+### Page 1: General Performance Overview
+
+The first dashboard page provides a high-level overview of the dataset and selected business metrics.
+
+It includes KPI cards for:
+
+- Total revenue
+- Total orders
+- Total customers
+- Total sellers
+- Total products sold
+
+This page also includes monthly trend visuals comparing actual monthly values with rolling 3-month averages.
+
+#### Monthly Orders with Rolling 3-Month Average
+
+This visual compares the actual number of monthly orders with the rolling 3-month average of orders.
+
+The goal of this chart is to smooth short-term monthly fluctuations and make the general order trend easier to interpret.
+
+#### Monthly Revenue with Rolling 3-Month Average
+
+This visual compares actual monthly revenue with the rolling 3-month average revenue.
+
+The rolling average helps show the broader revenue trend across the available time period, especially where individual months may fluctuate.
+
+#### Average Monthly Revenue vs. Average Monthly Orders
+
+This visual compares yearly average monthly revenue with yearly average monthly order volume.
+
+The comparison shows that revenue movement is strongly connected to order volume. As the number of orders increases, revenue generally increases as well.
+
+#### Average Revenue per Customer vs. Orders per Customer
+
+This visual compares average revenue per customer with the average number of orders per customer by year.
+
+The average number of orders per customer is very close to 1, which suggests that repeat purchasing is limited in this dataset. This is important context when interpreting customer behavior and revenue growth.
+
+---
+
+### Page 2: YoY and YTD Revenue Analysis
+
+This page focuses on revenue comparisons over time.
+
+It includes monthly year-over-year analysis and cumulative year-to-date performance.
+
+#### Monthly Revenue with YoY Comparison
+
+This visual compares monthly revenue with revenue from the same month in the previous year.
+
+The page also includes metric cards that update based on the selected month. These cards show:
+
+- Current period revenue
+- Previous year revenue
+- YoY percentage change
+
+This allows individual months to be reviewed in more detail.
+
+#### Year-to-Date vs. Prior-Year-to-Date Revenue
+
+This visual compares cumulative year-to-date revenue with the equivalent prior-year-to-date value.
+
+The supporting metric cards show:
+
+- YTD revenue for the selected month
+- PYTD revenue for the selected month
+- Percentage change between YTD and PYTD
+
+This page helps evaluate whether revenue performance in the current year is ahead of or behind the comparable period from the previous year.
+
+Because the dataset contains only partial data for 2016 and 2018, YoY and YTD comparisons should be interpreted with caution. The strongest full-year baseline in the dataset is 2017.
+
+---
+
+### Page 3: Product Categories and Sellers
+
+This page focuses on product category performance and seller performance.
+
+#### Top Product Categories by Annual Revenue
+
+This section includes separate bar charts for the top product categories by revenue in:
+
+- 2016
+- 2017
+- 2018
+
+The purpose of this layout is to make annual category performance easier to compare, while keeping the partial-year nature of 2016 and 2018 visible.
+
+#### Top Sellers by Revenue
+
+This visual shows the sellers with the highest total revenue.
+
+Seller names are not available in the dataset, so sellers are displayed using anonymized seller IDs.
+
+#### Top Sellers by Number of Orders
+
+This visual shows the sellers with the highest number of orders.
+
+Comparing top sellers by revenue and by order count helps identify whether the highest-revenue sellers are also the sellers with the highest order volume.
+
+---
+
+### Page 4: Delivery Performance
+
+The last page of the dashboard focuses on delivery performance across Brazilian states.
+
+The analysis is limited to the top 5 states by order volume to keep the visuals readable and focused on the most relevant regions.
+
+#### Percentage of Delayed Orders by Month for Top 5 States
+
+This visual shows the monthly percentage of delayed orders for the five states with the highest number of orders.
+
+An order is treated as delayed when the actual customer delivery date is later than the estimated delivery date.
+
+This chart helps compare how delay rates changed over time across the highest-volume states.
+
+#### Average Delivery Days by Month for Top 5 States
+
+This visual shows the average number of delivery days by month for the same top 5 states.
+
+Delivery time is calculated as the difference between the purchase date and the actual customer delivery date.
+
+When compared with the delayed order percentage visual, this chart provides additional context. For example, RJ, which represents Rio de Janeiro, appears to have both a relatively high percentage of delayed orders and longer average delivery times compared with other high-volume states.
+
+---
 
