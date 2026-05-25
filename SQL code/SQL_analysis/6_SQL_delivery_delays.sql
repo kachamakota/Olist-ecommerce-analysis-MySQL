@@ -58,4 +58,4 @@ WHERE o.order_status = 'delivered'
 GROUP BY customer_state, order_month
 ORDER BY customer_state, order_month;
 
--- SELECT * FROM vw_delivery_time_stats;
+SELECT * FROM vw_delivery_time_stats;
